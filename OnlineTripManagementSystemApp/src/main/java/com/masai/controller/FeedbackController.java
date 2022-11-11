@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import app.trip.exceptions.FeedbackException;
-import app.trip.exceptions.HotelException;
-import app.trip.models.Feedback;
-import app.trip.models.Hotel;
-import app.trip.services.FeedbackService;
+import com.masai.exceptions.FeedbackException;
+import com.masai.model.Feedback;
+import com.masai.service.FeedbackService;
+
+
+
+
 
 @RestController
 @CrossOrigin(origins = "*")
