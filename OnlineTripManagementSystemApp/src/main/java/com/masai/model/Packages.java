@@ -11,13 +11,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+
 @Data
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
-public class Package {
+public class Packages {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,6 +26,8 @@ public class Package {
 	private String packageDescription;
 	private String packageType;
 	private Double packageCost;
+	
+	
 	
 	
 }
