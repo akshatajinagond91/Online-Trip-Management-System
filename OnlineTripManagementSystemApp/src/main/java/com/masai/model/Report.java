@@ -7,25 +7,20 @@ import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
-public class Admin {
-
+public class Report {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int adminId;
-	private String adminName;
-	private String password;
-	private String email;
-	private String mobile;
-	
-	public Admin() {
-		
-	}
-	
-	
+	private int reportId;
+	private String reportName;
+	private String reportType;
+
 }
