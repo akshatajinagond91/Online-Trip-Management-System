@@ -8,26 +8,25 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import app.trip.exceptions.FeedbackException;
-import app.trip.models.CurrentUserLoginSession;
-import app.trip.models.Feedback;
-import app.trip.models.User;
-import app.trip.repository.FeedbackDao;
-import app.trip.repository.SessionRepository;
-import app.trip.repository.UserRepository;
+import com.masai.exceptions.FeedbackException;
+import com.masai.model.User;
+import com.masai.repository.FeedbackDao;
+import com.masai.repository.SessionDao;
+import com.masai.repository.UserDao;
+
 
 
 @Service
-public class FeedbackSericeImpl implements FeedbackService{
+public abstract class FeedbackSericeImpl implements FeedbackService{
 
 	@Autowired
 	private FeedbackDao feedbackDao;
 	
 	@Autowired
-	 private SessionRepository sessionRepository;
+	 private SessionDao sessionRepository;
 	
 	@Autowired
-	private UserRepository userRepository;
+	private UserDao userRepository;
 
 	@Override
 	public Feedback addFeedback(Feedback feedback, String authKey) throws FeedbackException {
@@ -134,6 +133,42 @@ public class FeedbackSericeImpl implements FeedbackService{
 			
 			
 			
+	}
+
+	@Override
+	public Feedback addFeedback(Feedback feedback, String authKey) throws FeedbackException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Feedback findByFeedbackId(Integer feedbackId) throws FeedbackException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Feedback addFeedback(Feedback feedback, String authKey) throws com.masai.service.FeedbackException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Feedback findByFeedbackId(Integer feedbackId) throws com.masai.service.FeedbackException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Feedback addFeedback(Feedback feedback, String authKey) throws com.masai.service.FeedbackException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Feedback findByFeedbackId(Integer feedbackId) throws com.masai.service.FeedbackException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
