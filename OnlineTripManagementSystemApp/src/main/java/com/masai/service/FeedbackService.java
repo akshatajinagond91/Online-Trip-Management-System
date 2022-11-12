@@ -2,8 +2,10 @@ package com.masai.service;
 
 import java.util.List;
 
-import app.trip.exceptions.FeedbackException;
-import app.trip.models.Feedback;
+import com.masai.exceptions.FeedbackException;
+import com.masai.model.Feedback;
+
+
 
 
 public interface FeedbackService {

@@ -1,7 +1,5 @@
 package com.masai.service;
 
-import java.security.cert.PKIXRevocationChecker.Option;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.masai.exceptions.FeedbackException;
+import com.masai.model.CurrentUserSession;
+import com.masai.model.Feedback;
 import com.masai.model.User;
 import com.masai.repository.FeedbackDao;
 import com.masai.repository.SessionDao;
@@ -17,7 +17,7 @@ import com.masai.repository.UserDao;
 
 
 @Service
-public abstract class FeedbackSericeImpl implements FeedbackService{
+public class FeedbackSericeImpl implements FeedbackService{
 
 	@Autowired
 	private FeedbackDao feedbackDao;
@@ -31,14 +31,7 @@ public abstract class FeedbackSericeImpl implements FeedbackService{
 	@Override
 	public Feedback addFeedback(Feedback feedback, String authKey) throws FeedbackException {
 		
-		Optional<CurrentUserLoginSession> currentUserOptional=sessionRepository.findByAuthkey(authKey);
-		
-		if(!currentUserOptional.isPresent())
-		{
-			throw new FeedbackException("Kindly login first into your account");
-		}
-		
-         CurrentUserLoginSession currentUserLoginSession=currentUserOptional.get();
+		CurrentUserSession currentUserLoginSession=sessionRepository.findByUuid(authKey);
 		
 		User user=userRepository.findById(currentUserLoginSession.getUserId()).get();
 		
@@ -73,14 +66,8 @@ public abstract class FeedbackSericeImpl implements FeedbackService{
 	@Override
 	public List<Feedback> findByCustomerId(Integer customerId,String authKey) throws FeedbackException {
 		
-        Optional<CurrentUserLoginSession> currentUserOptional=sessionRepository.findByAuthkey(authKey);
+        CurrentUserSession currentUserLoginSession=sessionRepository.findByUuid(authKey);
 		
-		if(!currentUserOptional.isPresent())
-		{
-			throw new FeedbackException("Kindly login first into your account");
-		}
-		
-		CurrentUserLoginSession currentUserLoginSession=currentUserOptional.get();
 		
 		User user=userRepository.findById(currentUserLoginSession.getUserId()).get();
 		
@@ -89,7 +76,7 @@ public abstract class FeedbackSericeImpl implements FeedbackService{
 			throw new FeedbackException("Only admins can access this feature");
 		}
 		
-		Optional<User> userOptional=userRepository.findByUserId(customerId);
+		Optional<User> userOptional=userRepository.findById(customerId);
 		
 		if(!userOptional.isPresent())
 		{
@@ -111,14 +98,8 @@ public abstract class FeedbackSericeImpl implements FeedbackService{
 	@Override
 	public List<Feedback> viewAllFeedbacks(String authKey) throws FeedbackException {
 		
-		    Optional<CurrentUserLoginSession> currentUserOptional=sessionRepository.findByAuthkey(authKey);
+		    CurrentUserSession currentUserLoginSession=sessionRepository.findByUuid(authKey);
 			
-			if(!currentUserOptional.isPresent())
-			{
-				throw new FeedbackException("Kindly login first into your account");
-			}
-			
-			CurrentUserLoginSession currentUserLoginSession=currentUserOptional.get();
 			
 			User user=userRepository.findById(currentUserLoginSession.getUserId()).get();
 			
@@ -135,45 +116,6 @@ public abstract class FeedbackSericeImpl implements FeedbackService{
 			
 	}
 
-	@Override
-	public Feedback addFeedback(Feedback feedback, String authKey) throws FeedbackException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Feedback findByFeedbackId(Integer feedbackId) throws FeedbackException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Feedback addFeedback(Feedback feedback, String authKey) throws com.masai.service.FeedbackException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Feedback findByFeedbackId(Integer feedbackId) throws com.masai.service.FeedbackException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Feedback addFeedback(Feedback feedback, String authKey) throws com.masai.service.FeedbackException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Feedback findByFeedbackId(Integer feedbackId) throws com.masai.service.FeedbackException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	
-	
 	
 
 }
