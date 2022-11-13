@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
 		MyErrorDetails errorDetails = new MyErrorDetails();
 		errorDetails.setTimeStamp(LocalDateTime.now());
 		errorDetails.setMessage(nfe.getMessage());
-		errorDetails.setDetails(req.getDescription(false));
+		errorDetails.setDescription(req.getDescription(false));
 
 		return new ResponseEntity<MyErrorDetails>(errorDetails, HttpStatus.NOT_FOUND);
 
@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
 		MyErrorDetails errorDetails = new MyErrorDetails();
 		errorDetails.setTimeStamp(LocalDateTime.now());
 		errorDetails.setMessage(pe.getMessage());
-		errorDetails.setDetails(req.getDescription(false));
+		errorDetails.setDescription(req.getDescription(false));
 		
 		return new ResponseEntity<MyErrorDetails>(errorDetails,HttpStatus.NOT_FOUND);
 	}
@@ -42,7 +42,7 @@ public class GlobalExceptionHandler {
 		MyErrorDetails errorDetails = new MyErrorDetails();
 		errorDetails.setTimeStamp(LocalDateTime.now());
 		errorDetails.setMessage(ue.getMessage());
-		errorDetails.setDetails(req.getDescription(false));
+		errorDetails.setDescription(req.getDescription(false));
 		
 		return new ResponseEntity<MyErrorDetails>(errorDetails,HttpStatus.OK);
 	}
@@ -53,7 +53,7 @@ public class GlobalExceptionHandler {
 		MyErrorDetails errorDetails = new MyErrorDetails();
 		errorDetails.setTimeStamp(LocalDateTime.now());
 		errorDetails.setMessage(pe.getMessage());
-		errorDetails.setDetails(req.getDescription(false));
+		errorDetails.setDescription(req.getDescription(false));
 		
 		return new ResponseEntity<MyErrorDetails>(errorDetails,HttpStatus.NOT_FOUND);
 	}
@@ -64,7 +64,7 @@ public class GlobalExceptionHandler {
 		MyErrorDetails errorDetails = new MyErrorDetails();
 		errorDetails.setTimeStamp(LocalDateTime.now());
 		errorDetails.setMessage(pe.getMessage());
-		errorDetails.setDetails(req.getDescription(false));
+		errorDetails.setDescription(req.getDescription(false));
 		
 		return new ResponseEntity<MyErrorDetails>(errorDetails,HttpStatus.NOT_FOUND);
 	}

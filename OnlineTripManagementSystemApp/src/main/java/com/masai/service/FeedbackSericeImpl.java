@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.masai.exceptions.FeedbackException;
-<<<<<<< HEAD
-=======
 import com.masai.model.CurrentUserSession;
->>>>>>> 769840ab3b33b12180e2b84030ff073db068d231
 import com.masai.model.Feedback;
 import com.masai.model.User;
 import com.masai.repository.FeedbackDao;

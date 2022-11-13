@@ -4,11 +4,6 @@ import java.util.List;
 
 import com.masai.exceptions.FeedbackException;
 import com.masai.model.Feedback;
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 769840ab3b33b12180e2b84030ff073db068d231
 
 
 public interface FeedbackService {
