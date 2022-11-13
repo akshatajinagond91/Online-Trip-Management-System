@@ -24,7 +24,7 @@
    
    
    
-   <img src="https://img.icons8.com/color/64/000000/css3.png" />
+   
    <img src="https://img.icons8.com/color/64/000000/mysql.png" />
    <img src="https://img.icons8.com/color/64/000000/java.png" />
    <img src="https://logodix.com/logo/34937.png" alt="aws" width="60" height="60"/>
