@@ -1,5 +1,7 @@
 package com.masai.model;
 
+import java.util.*;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,4 +24,6 @@ public class User {
 	private Integer userId;
 	private String userType;
 	private String password;
+	
+	private List<Feedback> feedbacks=new ArrayList<>();
 }
