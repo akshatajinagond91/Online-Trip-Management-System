@@ -15,11 +15,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-public class User {
+public class Travels {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer userId;
-	private String userType;
-	private String password;
+	private Integer travelsId;
+	private String trvelsName;
+	private String agentName;
+	private String address;
+	private String contact;
+	
+
 }

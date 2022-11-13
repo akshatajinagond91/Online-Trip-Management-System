@@ -1,7 +1,5 @@
 package com.masai.service;
 
-import java.security.cert.PKIXRevocationChecker.Option;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.masai.exceptions.FeedbackException;
+import com.masai.model.Feedback;
 import com.masai.model.User;
 import com.masai.repository.FeedbackDao;
 import com.masai.repository.SessionDao;

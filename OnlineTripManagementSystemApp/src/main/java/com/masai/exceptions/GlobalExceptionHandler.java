@@ -46,5 +46,27 @@ public class GlobalExceptionHandler {
 		
 		return new ResponseEntity<MyErrorDetails>(errorDetails,HttpStatus.OK);
 	}
+	
+	@ExceptionHandler(TravelsException.class)
+	ResponseEntity<MyErrorDetails> travelsExceptionHandler(TravelsException pe, WebRequest req){
+		
+		MyErrorDetails errorDetails = new MyErrorDetails();
+		errorDetails.setTimeStamp(LocalDateTime.now());
+		errorDetails.setMessage(pe.getMessage());
+		errorDetails.setDetails(req.getDescription(false));
+		
+		return new ResponseEntity<MyErrorDetails>(errorDetails,HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(Exception.class)
+	ResponseEntity<MyErrorDetails> otherExceptionHandler(Exception pe, WebRequest req){
+		
+		MyErrorDetails errorDetails = new MyErrorDetails();
+		errorDetails.setTimeStamp(LocalDateTime.now());
+		errorDetails.setMessage(pe.getMessage());
+		errorDetails.setDetails(req.getDescription(false));
+		
+		return new ResponseEntity<MyErrorDetails>(errorDetails,HttpStatus.NOT_FOUND);
+	}
 
 }
