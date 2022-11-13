@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,12 +27,9 @@ public class Route {
     private Integer routeId;
     private String routeFrom;
     private String routeTo;
-    private LocalDateTime departureTime;
-    private LocalDateTime arrivalTime;
-    private String pickupPoint;
     private Double fare;
     
-    @OneToOne(cascade =  CascadeType.ALL)
+    @OneToOne(cascade =  CascadeType.ALL,fetch = FetchType.EAGER)
 	private Bus bus;
 	
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.masai.exceptions.TravelsException;
 
@@ -11,6 +12,7 @@ import com.masai.model.Travels;
 
 import com.masai.repository.TravelsDao;
 
+@Service
 public class TravelsServiceImpl implements TravelsService {
 
 	@Autowired

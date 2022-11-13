@@ -5,10 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.service.PackageService;
 
-@RestController
 public class PackageController {
 
-	@Autowired
+	
 	PackageService packageService;
 	
 	

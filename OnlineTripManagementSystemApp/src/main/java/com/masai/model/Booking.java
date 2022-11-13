@@ -25,8 +25,6 @@ public class Booking {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer bookingId;
 	private String bookingType;
-	private String description;
-	private String bookingTitle;
 	private LocalDateTime bookingDate;
 	
 	@OneToOne(cascade = CascadeType.ALL)

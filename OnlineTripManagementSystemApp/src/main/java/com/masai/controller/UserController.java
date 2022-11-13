@@ -16,7 +16,7 @@ import com.masai.model.User;
 import com.masai.service.UserService;
 
 @RestController
-public class CustomerController {
+public class UserController {
 
 	@Autowired
 	private UserService userService;
