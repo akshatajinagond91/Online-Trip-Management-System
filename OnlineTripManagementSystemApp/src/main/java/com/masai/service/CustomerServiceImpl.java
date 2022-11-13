@@ -7,7 +7,7 @@ import com.masai.repository.CustomerDao;
 import com.masai.repository.SessionDao;
 import com.masai.exceptions.CustomerException;
 import com.masai.model.CurrentUserSession;
-import com.masai.model.Customer;
+import com.masai.model.User;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -20,10 +20,10 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	
 	@Override
-	public Customer createCustomer(Customer customer)throws CustomerException {
+	public User createCustomer(User customer)throws CustomerException {
 		
 		
-		Customer existingCustomer= cDao.findByMobileNo(customer.getMobileNo());
+		User existingCustomer= cDao.findByMobileNo(customer.getMobileNo());
 		
 		
 		
@@ -37,7 +37,7 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 	@Override
-	public Customer updateCustomer(Customer customer, String key) throws CustomerException{
+	public User updateCustomer(User customer, String key) throws CustomerException{
 	
 		CurrentUserSession loggedInUser= sDao.findByUuid(key);
 	

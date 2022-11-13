@@ -10,7 +10,7 @@ import com.masai.repository.CustomerDao;
 import com.masai.repository.SessionDao;
 import com.masai.exceptions.LoginException;
 import com.masai.model.CurrentUserSession;
-import com.masai.model.Customer;
+import com.masai.model.User;
 import com.masai.model.LoginDTO;
 
 import net.bytebuddy.utility.RandomString;
@@ -30,7 +30,7 @@ public class LoginServiceImpl implements LoginService{
 	public String logIntoAccount(LoginDTO dto)throws LoginException{
 		
 		
-		Customer existingCustomer= cDao.findByMobileNo(dto.getMobileNo());
+		User existingCustomer= cDao.findByMobileNo(dto.getMobileNo());
 		
 		if(existingCustomer == null) {
 			
