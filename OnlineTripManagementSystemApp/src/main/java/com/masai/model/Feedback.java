@@ -11,12 +11,16 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Feedback {
 	
 	@Id
@@ -30,45 +34,5 @@ public class Feedback {
 	@ManyToOne(cascade = CascadeType.ALL)
 	private User user;
 
-	public void setUser(User user2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public Integer getFeedbackId() {
-		return feedbackId;
-	}
-
-	public void setFeedbackId(Integer feedbackId) {
-		this.feedbackId = feedbackId;
-	}
-
-	public String getFeedbackString() {
-		return feedbackString;
-	}
-
-	public void setFeedbackString(String feedbackString) {
-		this.feedbackString = feedbackString;
-	}
-
-	public double getRating() {
-		return rating;
-	}
-
-	public void setRating(double rating) {
-		this.rating = rating;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
+	
 }

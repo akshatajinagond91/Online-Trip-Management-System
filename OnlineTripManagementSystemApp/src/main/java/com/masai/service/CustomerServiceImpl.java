@@ -29,9 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		if(existingCustomer != null) 
 			throw new CustomerException("Customer Already Registered with Mobile number");
-			
-		
-		
+
 		
 			return cDao.save(customer);
 			

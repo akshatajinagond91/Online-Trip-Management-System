@@ -11,7 +11,7 @@ public interface AdminDao extends JpaRepository<Admin,Integer>{
 	
 	public User removeUser() throws AdminException;
 	
-	@Query("select s from Student s where s.email= ?1 AND s.password = ?2")
+	@Query("select a from Admin a where a.email= ?1 AND a.password = ?2")
 	public Admin loginAdmin(String username,String password);
 	
 
