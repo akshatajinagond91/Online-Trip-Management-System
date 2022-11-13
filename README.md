@@ -23,7 +23,7 @@
 <p>
    
    
-   <img src="https://img.icons8.com/color/64/000000/html-5.png"/>
+   
    <img src="https://img.icons8.com/color/64/000000/css3.png" />
    <img src="https://img.icons8.com/color/64/000000/mysql.png" />
    <img src="https://img.icons8.com/color/64/000000/java.png" />
