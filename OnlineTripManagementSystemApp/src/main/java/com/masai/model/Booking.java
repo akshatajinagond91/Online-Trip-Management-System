@@ -2,10 +2,12 @@ package com.masai.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,5 +28,8 @@ public class Booking {
 	private String description;
 	private String bookingTitle;
 	private LocalDateTime bookingDate;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Packages packages;
 
 }

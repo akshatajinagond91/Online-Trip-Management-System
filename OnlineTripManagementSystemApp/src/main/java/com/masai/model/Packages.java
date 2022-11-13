@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +19,9 @@ import lombok.ToString;
 @ToString
 @Entity
 public class Packages {
+	
+	@OneToOne
+	private Hotel hotel;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

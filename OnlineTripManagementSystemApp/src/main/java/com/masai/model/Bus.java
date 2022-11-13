@@ -1,9 +1,13 @@
 package com.masai.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import org.aspectj.weaver.tools.Trace;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,5 +28,7 @@ public class Bus {
 	private String busNumber;
 	private Integer capacity;
 	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Travels travels;
 
 }

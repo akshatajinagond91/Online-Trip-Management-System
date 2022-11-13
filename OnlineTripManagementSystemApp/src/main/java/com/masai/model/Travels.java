@@ -1,9 +1,14 @@
 package com.masai.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,5 +30,7 @@ public class Travels {
 	private String address;
 	private String contact;
 	
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Bus> busList = new ArrayList<>();
 
 }
