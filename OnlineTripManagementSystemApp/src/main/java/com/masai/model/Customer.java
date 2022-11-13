@@ -18,6 +18,7 @@ public class Customer {
 	private String mobileNo;
 	private String password;
 	private String email;
+	
 	public String getMobileNo() {
 		// TODO Auto-generated method stub
 		return null;

@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +26,7 @@ public class User {
 	private Integer userId;
 	private String userType;
 	private String password;
-	
-	private List<Feedback> feedbacks=new ArrayList<>();
+
+	//mapping
+    private List<Feedback> feedbacks=new ArrayList<>();
 }

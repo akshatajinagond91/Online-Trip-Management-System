@@ -1,5 +1,7 @@
 package com.masai.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,7 +9,6 @@ import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -16,15 +17,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
-public class Admin {
-
+public class Route {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer adminId;
-	private String adminName;
-	private String password;
-	private String email;
-	private String mobile;
-	
+    private Integer routeId;
+    private String routeFrom;
+    private String routeTo;
+    private LocalDateTime departureTime;
+    private LocalDateTime arrivalTime;
+    private String pickupPoint;
+    private Double fare;
 	
 }

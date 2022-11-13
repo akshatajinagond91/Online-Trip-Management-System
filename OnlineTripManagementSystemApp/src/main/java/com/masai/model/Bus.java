@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -16,15 +15,14 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
-public class Admin {
-
+public class Bus {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer adminId;
-	private String adminName;
-	private String password;
-	private String email;
-	private String mobile;
+	private Integer busId;
+	private String busType;
+	private String busNumber;
+	private Integer capacity;
 	
-	
+
 }

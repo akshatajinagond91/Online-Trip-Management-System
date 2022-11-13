@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -16,15 +15,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
-public class Admin {
-
+public class Hotel {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer adminId;
-	private String adminName;
-	private String password;
-	private String email;
-	private String mobile;
-	
-	
+	private Integer hotelId;
+	private String hotelName;
+	private String hotelType;
+	private String hotelDescription;
+	private String address;
+	private Double rent;
+	private String status;
+
 }
