@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.masai.repository.CustomerDao;
 import com.masai.repository.SessionDao;
+import com.masai.repository.UserDao;
 import com.masai.exceptions.LoginException;
 import com.masai.model.CurrentUserSession;
 import com.masai.model.User;
@@ -19,7 +19,7 @@ import net.bytebuddy.utility.RandomString;
 public class LoginServiceImpl implements LoginService{
 
 	@Autowired
-	private CustomerDao cDao;
+	private UserDao userDao;
 	
 	@Autowired
 	private SessionDao sDao;
@@ -30,7 +30,7 @@ public class LoginServiceImpl implements LoginService{
 	public String logIntoAccount(LoginDTO dto)throws LoginException{
 		
 		
-		User existingCustomer= cDao.findByMobileNo(dto.getMobileNo());
+		User existingCustomer= userDao.findByMobileNo(dto.getMobileNo());
 		
 		if(existingCustomer == null) {
 			
@@ -40,12 +40,7 @@ public class LoginServiceImpl implements LoginService{
 		}
 		
 		
-		
-		
-		Optional<CurrentUserSession> validCustomerSessionOpt =  sDao.findById(existingCustomer.getCustomerId());
-		
-		
-		
+		Optional<CurrentUserSession> validCustomerSessionOpt =  sDao.findById(existingCustomer.getUserId());
 		
 		
 		if(validCustomerSessionOpt.isPresent()) {
@@ -60,7 +55,7 @@ public class LoginServiceImpl implements LoginService{
 			
 			
 			
-			CurrentUserSession currentUserSession = new CurrentUserSession(existingCustomer.getCustomerId(),key,LocalDateTime.now());
+			CurrentUserSession currentUserSession = new CurrentUserSession(existingCustomer.getUserId(),key,LocalDateTime.now());
 			
 			sDao.save(currentUserSession);
 

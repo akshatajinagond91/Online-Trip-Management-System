@@ -3,41 +3,51 @@ package com.masai.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.masai.exceptions.CustomerException;
+import com.masai.exceptions.UserException;
 import com.masai.model.User;
-import com.masai.service.CustomerService;
+import com.masai.service.UserService;
 
 @RestController
 public class CustomerController {
 
 	@Autowired
-	private CustomerService cService;
+	private UserService userService;
 	
 	
-	@PostMapping("/customers")
-	public ResponseEntity<User> saveCustomer(@RequestBody User customer) throws CustomerException {
+	@PostMapping("/userAdd")
+	public ResponseEntity<User> addUserHandler(@RequestBody User user) throws UserException {
 		
-		User savedCustomer= cService.createCustomer(customer);
+		User savedUser= userService.addUser(user);
 		
 		
-		return new ResponseEntity<User>(savedCustomer,HttpStatus.CREATED);
+		return new ResponseEntity<User>(savedUser,HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/customers")
-	public  ResponseEntity<User> updateCustomer(@RequestBody User customer,@RequestParam(required = false) String key ) throws CustomerException {
+	@PutMapping("/userUpdate")
+	public ResponseEntity<User> updateUserHandler(@RequestBody User user,@RequestParam String key ) throws UserException {
 		
-		
-		User updatedCustomer= cService.updateCustomer(customer, key);
+		User updatedUser= userService.updateUser(user, key);
 				
-		return new ResponseEntity<User>(updatedCustomer,HttpStatus.OK);
+		return new ResponseEntity<User>(updatedUser,HttpStatus.OK);
 		
 	}
+	
+//	@DeleteMapping("/userDel/{}")
+//	public ResponseEntity<User> deleteUserHandler(@RequestBody User user,@RequestParam String key ) throws UserException {
+//		
+//		User updatedUser= userService.updateUser(user, key);
+//				
+//		return new ResponseEntity<User>(updatedUser,HttpStatus.OK);
+//		
+//	}
 	
 
 	
