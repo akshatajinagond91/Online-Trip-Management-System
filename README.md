@@ -89,6 +89,9 @@
 ```
 
 
+ER diagram=========
+![image](https://user-images.githubusercontent.com/105930703/201670525-6a67228a-b2af-49db-a409-acf8e34595e2.png)
+
 
 ## API Root Endpoint
 
