@@ -163,3 +163,20 @@ ER diagram=========
 Swagger UI===
 ![image](https://user-images.githubusercontent.com/105930703/202098886-e78cc7f3-ee5d-446f-864b-c36b736e2589.png)
 
+
+Login controller==
+![image](https://user-images.githubusercontent.com/105930703/202099260-796ee7a9-f22d-48c0-b0c4-cb12d71f6627.png)
+
+
+Admin Controller==
+![image](https://user-images.githubusercontent.com/105930703/202099426-88f70611-5609-4e31-a474-98f40077ae31.png)
+
+User Controller==
+![image](https://user-images.githubusercontent.com/105930703/202099608-6ad56ed9-ff48-405b-9b36-fff1529182b8.png)
+
+Model Controller==
+![image](https://user-images.githubusercontent.com/105930703/202099802-8e5dcf6b-8974-454b-94fa-f0e049d1827f.png)
+
+
+
+
