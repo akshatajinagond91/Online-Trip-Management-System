@@ -160,4 +160,6 @@ ER diagram=========
 
 
 ---
+Swagger UI===
+![image](https://user-images.githubusercontent.com/105930703/202098886-e78cc7f3-ee5d-446f-864b-c36b736e2589.png)
 
